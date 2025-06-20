@@ -1,4 +1,48 @@
-[*.cs]
+root = true
 
-# IDE0290: Use primary constructor
-dotnet_diagnostic.IDE0290.severity = none
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{md,markdown, mkdn}]
+trim_trailing_whitespace = false
+insert_final_newline = false
+
+[*.{cs,csx}]
+indent_style = space
+indent_size = 4
+
+# Rules of nomenclature
+dotnet_naming_rule.private_fields_camel_case.symbols = private_fields
+dotnet_naming_rule.private_fields_camel_case.style = camel_case_style
+dotnet_naming_rule.private_fields_camel_case.severity = warning
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_style.camel_case_style.required_prefix = _
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# Use of 'this' keyword
+dotnet_style_qualification_for_field = false:warning
+dotnet_style_qualification_for_property = false:warning
+dotnet_style_qualification_for_method = false:warning
+dotnet_style_qualification_for_event = false:warning
+
+# Perfomance configs
+dotnet_diagnostic.CA1805.severity = error # Avoid unnecessary initialization
+dotnet_diagnostic.CA1816.severity = error # Call GC.SuppressFinalize correctly
+dotnet_diagnostic.CA1820.severity = error # Test for empty strings using string length
+dotnet_diagnostic.CA1821.severity = error # Remove empty finalizers
+dotnet_diagnostic.CA1822.severity = error # Mark members as static
+dotnet_diagnostic.CA1823.severity = error # Avoid unused private fields
+dotnet_diagnostic.CA1825.severity = error # Avoid zero-length array allocations
+dotnet_diagnostic.CA1830.severity = error # Prefer StringBuilder.Append(char)
+dotnet_diagnostic.CA1831.severity = error # Use AsSpan instead of Range-based indexers
+dotnet_diagnostic.CA1832.severity = error # Use AsSpan/AsMemory instead of Range-based indexers
+dotnet_diagnostic.CA2013.severity = error # Do not use ReferenceEquals with value types
+dotnet_diagnostic.CA2014.severity = error # Do not use stackalloc in loops
+
+dotnet_language_version = latest
