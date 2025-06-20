@@ -18,4 +18,4 @@ COPY src/Orbit.Tests/*.csproj ./src/Orbit.Tests/
 RUN dotnet restore
 COPY src/. ./src/
 RUN dotnet build src/Orbit.Tests/Orbit.Tests.csproj -c Debug --no-restore
-RUN dotnet test src/Orbit.Tests/Orbit.Tests.csproj --no-build --no-restore --verbosity normal
+ENTRYPOINT ["dotnet", "test", "src/Orbit.Tests/Orbit.Tests.csproj", "--no-build", "--no-restore", "--verbosity", "diagnostic"]
