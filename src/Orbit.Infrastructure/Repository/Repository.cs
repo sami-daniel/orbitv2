@@ -26,9 +26,6 @@ public abstract class Repository<T> : IRepository<T> where T : class
     /// <inheritdoc/>
     public async Task<T?> GetAsync(int id)
     {
-#if DEBUG
-        if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id), "ID must be greater than zero.");
-#endif
         return await _context.Set<T>().FindAsync(id);
     }
 
