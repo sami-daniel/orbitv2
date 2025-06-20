@@ -25,6 +25,11 @@ dotnet_naming_symbols.private_fields.applicable_accessibilities = private
 dotnet_naming_style.camel_case_style.required_prefix = _
 dotnet_naming_style.camel_case_style.capitalization = camel_case
 
+# Disable nomeclature warnings for certain symbols
+dotnet_diagnostic.IDE0090.severity = none # Avoid use o simplified new expression
+dotnet_diagnostic.IDE0005.severity = warning # Remove unnecessary using directives
+dotnet_diagnostic.CA1050.severity = warning # Declare types in namespaces
+
 # Use of 'this' keyword
 dotnet_style_qualification_for_field = false:warning
 dotnet_style_qualification_for_property = false:warning
