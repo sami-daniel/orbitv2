@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbit.Core", "src\Orbit.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbit.Infrastructure", "src\Orbit.Infrastructure\Orbit.Infrastructure.csproj", "{6F39029D-06C8-42D4-BB36-9F21DC08ACDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbit.Test", "src\Orbit.Test\Orbit.Test.csproj", "{2A84F31E-2246-447A-A790-9D346CF634EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbit.Tests", "src\Orbit.Tests\Orbit.Tests.csproj", "{2A84F31E-2246-447A-A790-9D346CF634EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
