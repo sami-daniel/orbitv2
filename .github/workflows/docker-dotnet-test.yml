@@ -1,28 +1,38 @@
 name: CI/CD .NET Docker
+
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0.x'
 
-      - name: Build Docker image
-        run: |
-          docker build --target test -t orbit:test .
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Check code formatting
+        run: dotnet format --verify-no-changes
+
+      - name: Static code analysis
+        run: dotnet build --no-restore -warnaserror
+
+      - name: List vulnerable packages
+        run: dotnet list package --vulnerable || true
+
+      - name: Build Docker image (test stage)
+        run: docker build --target test -t orbit:test .
 
       - name: Run container to execute tests
-        run: |
-          docker run --rm orbit:test
+        run: docker run --rm orbit:test
