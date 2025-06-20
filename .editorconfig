@@ -51,3 +51,12 @@ dotnet_diagnostic.CA2013.severity = error # Do not use ReferenceEquals with valu
 dotnet_diagnostic.CA2014.severity = error # Do not use stackalloc in loops
 
 dotnet_language_version = latest
+
+# IDE0290: Use primary constructor
+dotnet_diagnostic.IDE0290.severity = none
+
+# IDE0044: Add readonly modifier
+dotnet_diagnostic.IDE0044.severity = warning
+
+# IDE0028: Simplify collection initialization
+dotnet_diagnostic.IDE0028.severity = warning
