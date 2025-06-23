@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROJECT_DIR="src/Orbit.Infrastructure"
-MIGRATIONS_DIR="$PROJECT_DIR/Data/Migrations"
+MIGRATIONS_DIR="Data/Migrations"
 SCRIPT_OUTPUT="migration_script.sql"
 
 show_help() {

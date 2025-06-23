@@ -26,7 +26,7 @@ param(
 )
 
 $ProjectDir = "src/Orbit.Infrastructure"
-$MigrationsDir = "$ProjectDir/Data/Migrations"
+$MigrationsDir = "Data/Migrations"
 $ScriptOutput = "migration_script.sql"
 
 function Show-Help {
