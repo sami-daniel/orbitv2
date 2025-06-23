@@ -14,6 +14,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        base.OnModelCreating(builder);
+
         builder.Entity<ApplicationUser>().ToTable("asp_net_users");
         builder.Entity<IdentityRole>().ToTable("asp_net_roles");
         builder.Entity<IdentityUserRole<string>>().ToTable("asp_net_user_roles");
