@@ -7,6 +7,11 @@ namespace Orbit.Container;
 
 public static class Container
 {
+    /// <summary>
+    /// Sets up the dependency injection container with required services and configurations.
+    /// </summary>
+    /// <param name="services">The service collection to configure.</param>
+    /// <exception cref="InvalidOperationException">Thrown when the connection string is not found in environment variables.</exception>
     public static void SetupContainer(this IServiceCollection services)
     {
         string connectionString;
