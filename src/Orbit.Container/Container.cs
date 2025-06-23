@@ -14,7 +14,7 @@ public static class Container
         ?? throw new InvalidOperationException("The connection String cannot be empty.");
 
         services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+        options.UseNpgsql(connectionString));
 
         services.AddIdentityCore<ApplicationUser>(options =>
         {

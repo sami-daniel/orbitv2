@@ -13,7 +13,7 @@ public class ApplicationDbContextDesignFactory : IDesignTimeDbContextFactory<App
         ?? throw new InvalidOperationException("The environment variable DB_CONNECTION with the database connection string cannot be empty.");
 
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-        optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        optionsBuilder.UseNpgsql(connectionString);
 
         return new ApplicationDbContext(optionsBuilder.Options);
     }
