@@ -47,7 +47,11 @@ list_migrations() {
 }
 
 update_database() {
-    run_ef database update "$1"
+    if [ -z "$1" ]; then
+        run_ef database update
+    else
+        run_ef database update "$1"
+    fi
 }
 
 rollback_migration() {
@@ -56,7 +60,7 @@ rollback_migration() {
         exit 1
     fi
 
-    PREV_MIGRATION=$(list_migrations | grep -B1 "$1" | head -n1)
+    PREV_MIGRATION=$(list_migrations | grep -B1 "$1" | sort | head -n1)
 
     if [ -z "$PREV_MIGRATION" ]; then
         echo "Error: No migration found before '$1'"
